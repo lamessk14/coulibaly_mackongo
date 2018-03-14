@@ -7,8 +7,10 @@ import org.mongodb.morphia.query.Query;
 
 import com.mongodb.MongoClient;
 
+import redis.clients.jedis.Jedis;
+
 public class App {
-	public static void main(String[] args) throws UnknownHostException {
+	public static void main(String[] args) throws UnknownHostException, InterruptedException {
 		Morphia morphia = new Morphia();
 		MongoClient mongo = new MongoClient();
 		morphia.map(Person.class).map(Address.class);
